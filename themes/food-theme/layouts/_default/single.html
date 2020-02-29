@@ -15,8 +15,9 @@
     <div class="post-images pure-g">
       {{ range .Resources.ByType "image" }}
       {{ $image := .Resize "500x375" }}
+      {{ $largeImage := .Resize "1280x" }}
       <div class="pure-u-1 pure-u-md-1-2">
-        <a href="">
+        <a href="{{ $largeImage.RelPermalink }}">
           <img alt="{{ $image.Title }}"
                class="pure-img-responsive"
                src="{{ $image.RelPermalink }}">
