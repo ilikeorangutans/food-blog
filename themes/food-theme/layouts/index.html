@@ -7,14 +7,16 @@
   {{ range first 10 (where .Site.RegularPages.ByLastmod "Type" "posts").Reverse }}
   <section class="post">
     <header class="post-header">
-      {{/*<img width="48" height="48" alt="Reid Burke&#x27;s avatar" class="post-avatar" src="/img/common/reid-avatar.png"> */}}
-
       <h2 class="post-title">
-        {{ .LinkTitle }}
+        <a href="{{ .RelPermalink }}">
+          {{ .LinkTitle }}
+        </a>
       </h2>
 
       <p class="post-meta">
-      Under {{ range $cat := .Params.categories }}<a class="post-category" href="/categories/{{ $cat }}">{{ $cat }}</a>{{ end }} on <em>{{ .PublishDate }}</em>
+        Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
+        {{- if .Params.tags }}, tagged {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag }}">{{ $tag }}</a>{{ end }}
+        {{ end }}
       </p>
     </header>
 
@@ -25,11 +27,10 @@
           {{ $image := .Fill "500x375 center" }}
           <div class="pure-u-1 pure-u-md-1-2">
             <a href="{{ $current.RelPermalink }}">
-              <img alt="Photo of someone working poolside at a resort"
+              <img alt="{{ $current.Title }}"
                    class="pure-img-responsive"
-                   src="{{ $image.RelPermalink}}">
+                   src="{{ $image.RelPermalink }}">
             </a>
-
           </div>
         {{ end }}
       </div>
@@ -37,7 +38,7 @@
         {{ .Summary }}
       </p>
       <a href="{{ .RelPermalink }}">
-        READ
+        Read more
       </a>
     </div>
   </section>

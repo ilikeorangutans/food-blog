@@ -6,6 +6,8 @@ menu:
     weight: -2000
 ---
 
-I cook a lot of food and I like to eat food and I like to talk about food, so here's a whole website dedicated to talk about these things. Deciding what to cook is the hardest part of making dinner, so I use this website as a source of inspiration and to compile previous meals that worked well.
+I like food. I like eating it, I like talking about it, and I like making food, and I like building things, so here's a full website about food.
 
-Often I try recipes and make variations, so I'll try to collect these here, so I can come and look them up.
+Deciding what to cook is the hardest part of making dinner, so I use this website as a source of inspiration and to collect meals that we enjoyed or turned out nice.
+
+And finally, I often try recipes or make variations and I need a place to record these, so I'll turn this into my public recipe collection and culinary notebook.
