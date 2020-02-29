@@ -15,7 +15,7 @@
 
       <p class="post-meta">
         Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
-        {{- if .Params.tags }}, tagged {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag }}">{{ $tag }}</a>{{ end }}
+        {{- if .Params.tags }}, filed under {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag }}">{{ $tag }}</a>{{ end }}
         {{ end }}
       </p>
     </header>
