@@ -1,6 +1,6 @@
 ---
 title: "Strawberry Cream Cake"
-date: 2020-02-28T16:39:15-05:00
+date: 2019-06-27T16:39:15-05:00
 tags:
 - dessert
 ---

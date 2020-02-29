@@ -1,6 +1,6 @@
 ---
 title: "Bayerischer Schweinebraten"
-date: 2020-02-28T16:04:43-05:00
+date: 2019-11-10T16:04:43-05:00
 tags:
 - roast
 - bavarian

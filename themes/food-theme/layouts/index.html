@@ -4,7 +4,7 @@
 
 <div class="posts">
   <h1 class="content-subhead">Recent Posts</h1>
-  {{ range first 10 (where .Site.RegularPages.ByLastmod "Type" "posts").Reverse }}
+  {{ range first 10 (where .Site.RegularPages.ByDate "Type" "posts").Reverse }}
   <section class="post">
     <header class="post-header">
       <h2 class="post-title">
