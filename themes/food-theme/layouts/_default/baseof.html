@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  {{- partial "head.html" . -}}
+  <body>
+
+    <div id="layout" class="pure-g">
+      {{- partial "main_nav.html" . -}}
+
+      <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+          {{- block "main" . }}{{- end }}
+          {{- partial "footer.html" . -}}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

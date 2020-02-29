@@ -1,0 +1,18 @@
+baseURL = "http://food.hannah-and-jakob.ca/"
+languageCode = "en-us"
+title = "Food I Made (or ate)"
+theme = "food-theme"
+defaultContentLanguage = "en"
+
+[permalinks]
+posts = "/:year/:month/:title/"
+
+[params]
+Subtitle = "One delicious meal at a time"
+
+[imaging]
+
+resampleFilter = "lanczos"
+quality = 85
+disableLatLong = true
+

@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+{{ with .Resources.ByType "image" }}
+  {{ . }}
+{{ end }}
+
+{{ with .Resources.GetMatch "header" }}
+  {{ $image := .Fill "900x400 q85" }}
+  {{ .Name }}
+  {{ .Permalink}}
+  {{ .RelPermalink}}
+  {{ .MediaType}}
+  <img src="{{ $image.RelPermalink }}" />
+{{ end }}
+
+{{ .Content }}
+
+{{ end }}
