@@ -4,6 +4,15 @@ title = "Food I Made (or ate)"
 theme = "food-theme"
 defaultContentLanguage = "en"
 
+[menu]
+
+[[menu.main]]
+
+identifier = "tags"
+name = "tags"
+url = "/tags/"
+
+
 [permalinks]
 posts = "/:year/:month/:title/"
 
