@@ -1,0 +1,33 @@
+{{ define "main" }}
+
+<p>
+  <a href="{{ .Site.BaseURL }}/tags/">
+    &larr; All Tags
+  </a>
+</p>
+
+<div class="posts">
+  <h1 class="content-subhead">
+    {{ title .Data.Singular  }}:  <span class="post-category">{{ title .Title }}</span>
+  </h1>
+
+{{ range .Pages }}
+  <section class="post">
+    <header class="post-header">
+      <a href="{{ .RelPermalink }}">
+        {{ .LinkTitle }}
+      </a>
+      <p class="post-meta">
+        Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
+        {{- if .Params.tags }}, filed under {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag }}">{{ $tag }}</a>{{ end }}
+        {{ end }}
+      </p>
+    </header>
+  </section>
+
+
+{{ end }}
+</div>
+
+
+{{ end }}

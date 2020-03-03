@@ -177,3 +177,6 @@ h3 {
     }
 }
 
+.tagcloud .tag {
+  margin: 0.5em;
+}
