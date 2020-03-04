@@ -3,6 +3,11 @@ languageCode = "en-us"
 title = "Food I Made (or ate)"
 theme = "food-theme"
 defaultContentLanguage = "en"
+copyright = "&copy; 2020"
+
+[author]
+
+name = "Jakob K&uuml;lzer"
 
 [menu]
 
