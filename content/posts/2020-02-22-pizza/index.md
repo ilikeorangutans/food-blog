@@ -14,6 +14,8 @@ tags:
 - pizza
 - main
 - italian
+categories:
+- i made
 ---
 
 We made pizza and they came out beautifully. Dough is based on [Joe Heffernan's Recipe](https://www.chefsteps.com/activities/life-changing-pizza-dough-with-joe-heffernan-of-seattle-s-independent-pizzeria) and was baked in hot preheated oven at 470&deg; F convection for three minutes and then broiled for 2 minutes.
