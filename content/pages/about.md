@@ -1,5 +1,6 @@
 ---
-title: "About"
+linkTitle: "About"
+title: "About This Blog"
 date: 2020-02-25T10:21:34-05:00
 menu:
   main:

@@ -4,10 +4,15 @@ title = "Food I Made (or ate)"
 theme = "food-theme"
 defaultContentLanguage = "en"
 copyright = "&copy; 2020"
+enableGitInfo = true
 
 [author]
 
 name = "Jakob K&uuml;lzer"
+
+[build]
+
+publishResources = false
 
 [menu]
 
