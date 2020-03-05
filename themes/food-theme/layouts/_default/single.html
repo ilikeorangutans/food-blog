@@ -5,7 +5,10 @@
       {{ .LinkTitle }}
     </h2>
     <p class="post-meta">
-      Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
+      Posted on <em>{{ .Date.Format "January 2, 2006" }}</em>
+      {{ if not (eq .Date .Lastmod) }}
+      <strong>and last updated on <em>{{ .Lastmod.Format "January 2, 2006" }}</em></strong>
+      {{ end -}}
       {{- if .Params.tags }}, tagged {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag }}">{{ $tag }}</a>{{ end }}
       {{ end }}
     </p>

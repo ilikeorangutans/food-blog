@@ -15,7 +15,10 @@
 
       <p class="post-meta">
         Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
-        {{- if .Params.tags }}, filed under {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag }}">{{ $tag }}</a>{{ end }}
+        {{- if not (eq .Date .Lastmod) }}
+          <strong>and last updated on <em>{{ .Lastmod.Format "January 2, 2006" -}}</em></strong>
+        {{- end -}}
+        {{- if .Params.tags }}, filed under {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag }}">{{ $tag }}</a>{{ end -}}
         {{ end }}
       </p>
     </header>
