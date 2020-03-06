@@ -24,7 +24,7 @@ url = "/tags/"
 
 
 [permalinks]
-posts = "/:year/:month/:title/"
+posts = "/:year/:month/:slug/"
 
 [params]
 Subtitle = "One delicious meal at a time"
