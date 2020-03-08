@@ -14,3 +14,4 @@ Recipe is from [Recipe Teacher](https://recipeteacher.com/instant-pot-creamy-tom
 
 I didn't have fire roasted tomatoes at hand so I substituted San Marzano tomatoes and it came out great. Hannah said she'd like it a little creamier, so next time I'll add more yoghurt. I do wonder where to get fire roasted tomatoes and how that would impact flavor. Maybe that could be emulated by searing some tomato paste with the onions?
 
+All in all this recipe is great. Overall prep and cooking takes 20 minutes or so.
