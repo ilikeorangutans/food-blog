@@ -29,10 +29,10 @@ Sunday was prep day so I made a lot of food for the next days.
 
 I made quiche again, this time with panchetta, mushrooms, and thyme.
 
-For the crust I used less water this time and the crust came out softer and flakier than the last time.
+For the crust I used less water this time and it came out softer and flakier than the last time.
 
 **Key Differences:**
-* grated the frozen butter like they thought us in culinary school, makes making the crust a lot easier
+* grated the frozen butter like they taught us in culinary school, makes making the crust a lot easier
 * Less water. Recipe calls for 100 ml of ice water, `+/-`. I went with roughly 120 ml because the flour was very dry. Last time I probably used 180 ml and that led to a tough crust.
 * Longer blind bake: went with 17 minutes blind bake, made the crust nice and flaky
 * Added a tablespoon of sugar to the pastry in the hopes it would lead to nicer browning. Got almost none of that, starting to think 350&deg; F is not hot enough to properly caramelize sugar in that amount of time. Need to look into at what temperature sugar caramelizes.
