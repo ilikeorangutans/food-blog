@@ -1,0 +1,19 @@
+[kilogram]
+
+short = "kg"
+
+[gram]
+
+short = "g"
+
+[millilitre]
+
+short = "ml"
+
+[litre]
+
+short = "l"
+
+[pinch]
+
+short = "pinch"

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="posts">
+  <h1 class="content-subhead">Recipes</h1>
+
+  {{ range .Pages.ByTitle }}
+  <section class="post">
+
+    <header class="post-header">
+      <h3 class="post-title">
+        <a href="{{ .RelPermalink }}">
+          {{ .LinkTitle }}
+        </a>
+      </h3>
+    </header>
+  </section>
+  {{ end }}
+<div>
+{{ end }}

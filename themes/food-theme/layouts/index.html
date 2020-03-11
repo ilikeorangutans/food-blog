@@ -4,7 +4,7 @@
 
 <div class="posts">
   <h1 class="content-subhead">Recent Posts</h1>
-  {{ range first 5 (where .Site.RegularPages.ByDate "Type" "posts").Reverse }}
+  {{ range first 5 (.Site.RegularPages.ByDate ).Reverse }}
   <section class="post">
     <header class="post-header">
       <h2 class="post-title">
@@ -49,6 +49,6 @@
   <h1 class="content-subhead">But wait, there's more!</h1>
   {{ with .Site.GetPage "/posts" }}<p><a href="{{ .Permalink }}">&rarr; {{ .Title }}</a></p>{{ end }}
   {{ with .Site.GetPage "/tags" }}<p><a href="{{ .Permalink }}">&rarr; {{ .Title }}</a></p>{{ end }}
-
+  {{ with .Site.GetPage "/recipes" }}<p><a href="{{ .Permalink }}">&rarr; {{ .Title }}</a></p>{{ end }}
 </div>
 {{ end }}

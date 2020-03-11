@@ -1,0 +1,69 @@
+{{ define "main" }}
+<section class="post">
+  <header class="post-header">
+    <h2 class="post-title">
+      {{ .Title }}
+    </h2>
+    <p class="post-meta">
+      Posted on <em>{{ .Date.Format "January 2, 2006" }}</em>
+      {{ if not (eq .Date .Lastmod) }}
+      <strong>and last updated on <em>{{ .Lastmod.Format "January 2, 2006" }}</em></strong>
+      {{ end -}}
+      {{- if .Params.tags }}, tagged {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag | urlize }}">{{ $tag }}</a>{{ end }}
+      {{ end }}
+    </p>
+  </header>
+</section>
+<h1 class="content-subhead">Overview</h1>
+<section class="post ingredients">
+  <div class="post-description">
+    {{ with .Params.yields }}
+    <p>Yields: {{ . }}</p>
+    {{ end }}
+    <p>
+      {{ .Content }}
+    </p>
+  </div>
+</section>
+{{ with .Params.ingredients }}
+<h1 class="content-subhead">Ingredients</h1>
+<section class="post ingredients">
+  <table class="pure-table">
+    {{ range . }}
+    {{ $ingredient := index $.Site.Data.ingredients .name }}
+    <tr>
+      <td>
+        {{ .amount }}
+      </td>
+      <td>
+        {{ with .unit }}
+          {{ $unit := index $.Site.Data.units . }}
+          {{ $unit.short }}
+        {{ end }}
+      </td>
+      <td>
+        {{ $ingredient.title }}
+      </td>
+      <td>
+        {{ .notes }}
+      </td>
+    </tr>
+    {{ end }}
+  </table>
+</section>
+{{ end }}
+{{ with .Params.method }}
+<h1 class="content-subhead">Method</h1>
+<section class="post method">
+  <div class="post-description">
+    <ol>
+      {{ range . }}
+      <li>
+        {{ .description }}
+      </li>
+      {{ end }}
+    </ol>
+  </div>
+</section>
+{{ end }}
+{{ end }}

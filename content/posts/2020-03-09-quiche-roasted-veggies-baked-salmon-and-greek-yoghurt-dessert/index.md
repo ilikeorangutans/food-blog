@@ -29,7 +29,7 @@ Sunday was prep day so I made a lot of food for the next days.
 
 I made quiche again, this time with panchetta, mushrooms, and thyme.
 
-For the crust I used less water this time and it came out softer and flakier than the last time.
+For the crust I used less water this time and it came out softer and flakier than the last time. [Recipe for the pie crust here]({{< ref "/recipes/basic-pie-pastry" >}}).
 
 **Key Differences:**
 * grated the frozen butter like they taught us in culinary school, makes making the crust a lot easier
