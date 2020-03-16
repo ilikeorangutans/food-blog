@@ -17,3 +17,15 @@ short = "l"
 [pinch]
 
 short = "pinch"
+
+[lb]
+
+short = "lb"
+
+[tsp]
+
+short = "tsp"
+
+[cup]
+
+short = "cup"

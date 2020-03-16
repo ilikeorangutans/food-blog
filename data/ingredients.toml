@@ -21,3 +21,33 @@ title = "Water"
 [brown-sugar]
 
 title = "Brown Sugar"
+
+[potatoes]
+
+title = "Potatoes"
+
+[heavy-cream]
+
+title = "Heavy Cream"
+
+[gruyere]
+
+title = "Gruyère"
+
+[black-pepper]
+
+title = "Black Pepper"
+
+[onion]
+
+title = "Onion"
+
+[nutmeg]
+
+title = "Nutmeg"
+
+[garlic]
+
+title = "Garlic"
+default-unit = "clove"
+
