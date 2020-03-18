@@ -22,6 +22,14 @@ identifier = "tags"
 name = "tags"
 url = "/tags/"
 
+[[menu.theresmore]]
+
+identifier = "tags"
+name = "tags"
+url = "/tags/"
+title = "Tags"
+
+
 
 [permalinks]
 posts = "/:year/:month/:slug/"

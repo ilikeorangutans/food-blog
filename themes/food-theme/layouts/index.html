@@ -1,57 +1,75 @@
 {{ define "main"}}
 
+<div class="content">
 {{ .Content }}
-
-<div class="posts">
-  <h1 class="content-subhead">Recent Posts</h1>
-  {{ range first 5 (.Site.RegularPages.ByDate ).Reverse }}
-  <section class="post">
-    <header class="post-header">
-      <h2 class="post-title">
-        {{ if eq .Type "recipes" }}
-          Recipe:
-        {{ end }}
-        <a href="{{ .RelPermalink }}">
-          {{ .LinkTitle }}
-        </a>
-      </h2>
-
-      <p class="post-meta">
-        Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
-        {{- if not (eq .Date .Lastmod) }}
-          <strong>and last updated on <em>{{ .Lastmod.Format "January 2, 2006" -}}</em></strong>
-        {{- end -}}
-        {{- if .Params.tags }}, filed under {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag | urlize }}">{{ $tag | title }}</a>{{ end -}}
-        {{ end }}
-      </p>
-    </header>
-
-    <div class="post-description">
-      <div class="post-images pure-g">
-        {{ $current := . }}
-        {{ range first 2 (.Resources.ByType "image") }}
-          {{ $image := .Fill "500x375 center" }}
-          <div class="pure-u-1 pure-u-md-1-2">
-            <a href="{{ $current.RelPermalink }}">
-              <img alt="{{ $current.Title }}"
-                   class="pure-img-responsive"
-                   src="{{ $image.RelPermalink }}">
-            </a>
-          </div>
-        {{ end }}
-      </div>
-      <p>
-        {{ .Summary }}
-      </p>
-      <a href="{{ .RelPermalink }}">
-        Read more
-      </a>
-    </div>
-  </section>
-  {{ end }}
-  <h1 class="content-subhead">But wait, there's more!</h1>
-  {{ with .Site.GetPage "/posts" }}<p><a href="{{ .Permalink }}">&rarr; {{ .Title }}</a></p>{{ end }}
-  {{ with .Site.GetPage "/tags" }}<p><a href="{{ .Permalink }}">&rarr; {{ .Title }}</a></p>{{ end }}
-  {{ with .Site.GetPage "/recipes" }}<p><a href="{{ .Permalink }}">&rarr; {{ .Title }}</a></p>{{ end }}
 </div>
+
+<h2 class="subtitle">Recent Posts</h2>
+<hr>
+
+{{ range first 5 (.Site.RegularPages.ByDate ).Reverse }}
+<section>
+  <header>
+    <div class="tags is-pulled-right">
+    <span class="tag is-rounded is-primary">{{ .Type | title }}</span>
+    {{ if .IsDraft }}<span class="tag is-rounded is-danger">Draft</span>{{ end }}
+    </div>
+    <a href="{{ .RelPermalink }}">
+      <h2 class="title">
+        {{ .LinkTitle }}
+      </h2>
+    </a>
+  </header>
+
+  <p class="post-meta">
+  Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
+  {{- if not (eq .Date .Lastmod) }}
+  <strong>and last updated on <em>{{ .Lastmod.Format "January 2, 2006" -}}</em></strong>
+  {{- end -}}
+  {{- if .Params.tags }}, filed under <div class="tags">{{ range $tag := .Params.tags }}<a class="tag" href="/tags/{{ $tag | urlize }}">{{ $tag | title }}</a>{{ end -}}</div>
+  {{ end }}
+  </p>
+
+  <div class="post-description">
+    <div class="columns is-multiline">
+      {{ $current := . }}
+      {{ range first 2 (.Resources.ByType "image") }}
+      {{ $image := .Fill "500x375 center" }}
+      <div class="column is-half">
+        <figure class="image is-4by3">
+          <a href="{{ $current.RelPermalink }}">
+            <img alt="{{ $current.Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}" src="{{ $image.RelPermalink }}">
+          </a>
+        </figure>
+      </div>
+      {{ end }}
+    </div>
+    <p>
+    {{ .Summary }}
+    </p>
+    <a href="{{ .RelPermalink }}">
+      Read more
+    </a>
+  </div>
+</section>
+{{ end }}
+
+<hr>
+
+<section>
+  <div class="container">
+    <h2 class="subtitle">But wait, there's more!</h2>
+
+    {{ range .Site.Menus.theresmore }}
+    <p>
+    &rarr;
+    {{ with $.Site.GetPage ( strings.TrimSuffix "/" .URL ) }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ else }}
+    <a href="{{ .URL | absURL }}">{{ .Title }}</a>
+    {{ end }}
+    </p>
+    {{ end }}
+  </div>
+</section>
 {{ end }}

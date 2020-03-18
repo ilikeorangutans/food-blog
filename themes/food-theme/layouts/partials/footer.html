@@ -1,9 +1,9 @@
-<div class="footer">
-  <div class="pure-menu pure-menu-horizontal">
-    <ul>
-      <li class="pure-menu-item"><a href="https://gohugo.io/" class="pure-menu-link" target="_blank">built with Hugo</a></li>
-      <li class="pure-menu-item"><a href="http://purecss.io/" class="pure-menu-link" target="_blank">made with purecss</a></li>
-    </ul>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+    {{ .Site.Copyright | safeHTML }} {{ .Site.Author.name | safeHTML }}
+      &bull;
+      built with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="http://bulma.io/" target="_blank">Bulma</a>
+    </p>
   </div>
-</div>
-
+</footer>

@@ -34,7 +34,7 @@
 {{ end }}
 <h1 class="content-subhead">Overview</h1>
 <section class="post ingredients">
-  <div class="post-description">
+  <div class="content">
     {{ with .Params.yields }}
     <p>Yields: {{ . }}</p>
     {{ end }}
@@ -46,7 +46,7 @@
 {{ with .Params.ingredients }}
 <h1 class="content-subhead">Ingredients</h1>
 <section class="post ingredients">
-  <table class="pure-table">
+  <table class="table is-fullwidth">
     {{ range . }}
     {{ $ingredient := index $.Site.Data.ingredients .name }}
     <tr>
