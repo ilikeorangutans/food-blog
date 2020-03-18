@@ -3,15 +3,19 @@
   {{- partial "head.html" . -}}
   <body>
 
-    <div id="layout" class="pure-g">
-      {{- partial "main_nav.html" . -}}
-
-      <div class="content pure-u-1 pure-u-md-3-4">
-        <div>
-          {{- block "main" . }}{{- end }}
-          {{- partial "footer.html" . -}}
+    <div class="container">
+      <div class="columns">
+        <div class="column"></div>
+        <div class="column is-one-third">
+        {{- partial "main_nav.html" . -}}
         </div>
+        <div class="column is-two-thirds">
+          {{- block "main" . }}{{- end }}
+        </div>
+        <div class="column"></div>
       </div>
     </div>
+
+    {{- partial "footer.html" . -}}
   </body>
 </html>
