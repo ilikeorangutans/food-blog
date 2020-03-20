@@ -2,6 +2,11 @@
 title: "Potatoes Au Gratin"
 date: 2020-03-15T20:11:46-04:00
 
+tags:
+- side
+- vegetarian
+- potato
+
 ingredients:
 - amount: 1
   unit: lb
