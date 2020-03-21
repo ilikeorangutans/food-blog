@@ -19,7 +19,7 @@ publishResources = false
 [[menu.main]]
 
 identifier = "tags"
-name = "tags"
+name = "Tags"
 url = "/tags/"
 
 [[menu.theresmore]]

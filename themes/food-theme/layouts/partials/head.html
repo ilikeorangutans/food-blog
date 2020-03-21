@@ -2,10 +2,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/bulma.min.css">
-
     <title>{{ .Title }} &ndash; {{ .Site.Title }}</title>
     {{ range .Site.Home.AlternativeOutputFormats -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{ $css := resources.Get "css/bulma.min.css" | fingerprint | minify }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ $css := resources.Get "css/food-blog.css" | fingerprint | minify }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   </head>

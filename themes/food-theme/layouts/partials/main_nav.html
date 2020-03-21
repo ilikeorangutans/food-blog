@@ -1,26 +1,33 @@
-<div class="container">
-
-  <div class="header">
-    <h1 class="brand-title">{{.Site.Title}}</h1>
-    <h2 class="brand-tagline">{{.Site.Params.Subtitle}}</h2>
-
-    <nav class="nav">
-      <ul class="nav-list">
-        {{ range .Site.Menus.main }}
-        <li class="nav-item">
-          <a class="pure-button" href="{{ .URL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-      </ul>
+    <nav class="navbar container topNav">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="{{ .Site.Home.Permalink }}">
+            Food I Made (Or Ate)
+          </a>
+          <div class="navbar-burger burger" data-target="topNav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div id="topNav" class="navbar-menu">
+          <div class="navbar-start">
+            {{ range .Site.Menus.main }}
+            <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+          <div class="navbar-end pull-right">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                {{ $site := .Site }}
+                {{ with $site.Home.OutputFormats.Get "rss" -}}
+                <a class="icon" href="{{ .Permalink }}" title="RSS 2.0"><i class="fa fa-rss"></i></a>
+                {{ end -}}
+                <a class="icon" href="https://github.com/ilikeorangutans/food-blog" title="Sources for this blog"><i class="fa fa-github"></i></a>
+                <a class="icon" href="mailto:jakob.kuelzer@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
-    <nav class="nav">
-      <ul class="nav-list">
-        {{ $site := .Site }}
-        {{ with $site.Home.OutputFormats.Get "rss" -}}
-        <a class="" href="{{ .Permalink }}" title="RSS 2.0"><img src="{{ $site.BaseURL }}img/application-rss+xml.png" alt="RSS 2.0"/></a>
-        {{ end -}}
-      </ul>
-    </nav>
-  </div>
-</div>
-

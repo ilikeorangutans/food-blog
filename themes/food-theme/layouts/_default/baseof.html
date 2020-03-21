@@ -2,19 +2,13 @@
 <html lang="en">
   {{- partial "head.html" . -}}
   <body>
-
-    <div class="container">
-      <div class="columns">
-        <div class="column"></div>
-        <div class="column is-one-third">
-        {{- partial "main_nav.html" . -}}
-        </div>
-        <div class="column is-two-thirds">
-          {{- block "main" . }}{{- end }}
-        </div>
-        <div class="column"></div>
+    {{- partial "main_nav.html" . -}}
+    <section class="container" id="content">
+      <div class="box">
+        {{- block "main" . }}{{- end }}
       </div>
-    </div>
+    </section>
+
 
     {{- partial "footer.html" . -}}
   </body>

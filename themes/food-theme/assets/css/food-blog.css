@@ -1,0 +1,29 @@
+body {
+  background-color: #9fb1bc;
+}
+
+.topNav .container {
+  border-top: 1em solid teal;
+  border-bottom: 1em solid #9fb1bc;
+}
+
+.navbar-brand .navbar-item {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.navbar-brand {
+  padding-left: 0.75em;
+}
+
+.subtle-header {
+  border-bottom: 0.05em solid teal;
+}
+
+#content {
+  border-bottom: 1em solid #9fb1bc;
+}
+
+section.listing-item {
+  margin-bottom: 2.5em;
+}

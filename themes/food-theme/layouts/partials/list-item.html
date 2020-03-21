@@ -1,0 +1,48 @@
+<section class="listing-item">
+  <header class="level">
+    <a href="{{ .RelPermalink }}" class="subtitle is-size-3">
+        {{ .LinkTitle }}
+    </a>
+  </header>
+
+  <div class="level">
+    <div class="level-left">
+      <div class="level-item">
+        <p>
+        <i class="icon fa fa-calendar"></i><em>{{ .Lastmod.Format "January 2, 2006" }}</em>
+        </p>
+      </div>
+    </div>
+    <div class="level-right">
+      <div class="level-item tags">
+        <i class="icon fa fa-tags"></I>
+        {{ if .Draft }}<span class="tag is-rounded is-danger">Draft</span>{{ end }}
+        <span class="tag is-rounded is-primary">{{ .Type | singularize | title }}</span>
+        {{- if .Params.tags }}{{ range $tag := .Params.tags }}<a class="tag" href="/tags/{{ $tag | urlize }}">{{ $tag | title }}</a>{{ end -}}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="columns is-multiline">
+      {{ $current := . }}
+      {{ range first 2 (.Resources.ByType "image") }}
+      {{ $image := .Fill "500x375 center" }}
+      <div class="column is-half">
+        <figure class="image is-4by3">
+          <a href="{{ $current.RelPermalink }}">
+            <img alt="{{ $current.Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}" src="{{ $image.RelPermalink }}">
+          </a>
+        </figure>
+      </div>
+      {{ end }}
+    </div>
+    <p>
+    {{ .Summary }}
+    </p>
+    <a href="{{ .RelPermalink }}">
+      &rarr; Read more
+    </a>
+  </div>
+</section>

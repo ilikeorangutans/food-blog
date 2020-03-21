@@ -4,61 +4,15 @@
 {{ .Content }}
 </div>
 
-<h2 class="subtitle">Recent Posts</h2>
-<hr>
+<p class="subtle-header">Recent Posts</p>
 
 {{ range first 5 (.Site.RegularPages.ByDate ).Reverse }}
-<section>
-  <header>
-    <div class="tags is-pulled-right">
-    <span class="tag is-rounded is-primary">{{ .Type | title }}</span>
-    {{ if .IsDraft }}<span class="tag is-rounded is-danger">Draft</span>{{ end }}
-    </div>
-    <a href="{{ .RelPermalink }}">
-      <h2 class="title">
-        {{ .LinkTitle }}
-      </h2>
-    </a>
-  </header>
-
-  <p class="post-meta">
-  Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
-  {{- if not (eq .Date .Lastmod) }}
-  <strong>and last updated on <em>{{ .Lastmod.Format "January 2, 2006" -}}</em></strong>
-  {{- end -}}
-  {{- if .Params.tags }}, filed under <div class="tags">{{ range $tag := .Params.tags }}<a class="tag" href="/tags/{{ $tag | urlize }}">{{ $tag | title }}</a>{{ end -}}</div>
-  {{ end }}
-  </p>
-
-  <div class="post-description">
-    <div class="columns is-multiline">
-      {{ $current := . }}
-      {{ range first 2 (.Resources.ByType "image") }}
-      {{ $image := .Fill "500x375 center" }}
-      <div class="column is-half">
-        <figure class="image is-4by3">
-          <a href="{{ $current.RelPermalink }}">
-            <img alt="{{ $current.Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}" src="{{ $image.RelPermalink }}">
-          </a>
-        </figure>
-      </div>
-      {{ end }}
-    </div>
-    <p>
-    {{ .Summary }}
-    </p>
-    <a href="{{ .RelPermalink }}">
-      Read more
-    </a>
-  </div>
-</section>
+{{ partial "list-item.html" . }}
 {{ end }}
-
-<hr>
 
 <section>
   <div class="container">
-    <h2 class="subtitle">But wait, there's more!</h2>
+    <p class="subtle-header">But wait, there's more!</p>
 
     {{ range .Site.Menus.theresmore }}
     <p>

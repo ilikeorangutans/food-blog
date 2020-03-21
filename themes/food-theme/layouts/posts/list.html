@@ -1,56 +1,16 @@
 {{ define "main" }}
-<div class="posts">
-  <h1 class="content-subhead">{{ .Title }}</h1>
+  <p class="subtle-header">{{ .Title }}</p>
   <p>
     {{ .Content }}
   </p>
 
   {{ $paginator := .Paginator }}
-  {{ template "_internal/pagination.html" . }}
+  {{ partial "pagination.html" . }}
+  <div class="content">
   {{ range $paginator.Pages.ByLastmod.Reverse}}
-  <section class="post">
-    <header class="post-header">
-      <h2 class="post-title">
-        <a href="{{ .RelPermalink }}">
-          {{ .LinkTitle }}
-        </a>
-      </h2>
-
-      <p class="post-meta">
-        Posted on <em>{{ .PublishDate.Format "January 2, 2006" }}</em>
-        {{- if not (eq .Date .Lastmod) }}
-          <strong>and last updated on <em>{{ .Lastmod.Format "January 2, 2006" -}}</em></strong>
-        {{- end -}}
-        {{- if .Params.tags }}, filed under {{ range $tag := .Params.tags }}<a class="post-category" href="/tags/{{ $tag }}">{{ $tag }}</a>{{ end -}}
-        {{ end }}
-      </p>
-    </header>
-
-    <div class="post-description">
-      <div class="post-images pure-g">
-        {{ $current := . }}
-        {{ range first 2 (.Resources.ByType "image") }}
-          {{ $image := .Fill "500x375 center" }}
-          <div class="pure-u-1 pure-u-md-1-2">
-            <a href="{{ $current.RelPermalink }}">
-              <img alt="{{ $current.Title }}"
-                   class="pure-img-responsive"
-                   src="{{ $image.RelPermalink }}">
-            </a>
-          </div>
-        {{ end }}
-      </div>
-      <p>
-        {{ .Summary }}
-      </p>
-      <a href="{{ .RelPermalink }}">
-        Read more
-      </a>
-    </div>
-  </section>
-
+  {{ partial "list-item.html" . }}
   {{ end }}
-  {{ template "_internal/pagination.html" . }}
+  </div>
+  {{ partial "pagination.html" . }}
 
-</div>
 {{ end }}
