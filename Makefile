@@ -13,7 +13,7 @@ post:
 
 .PHONY: build
 build:
-	hugo --cleanDestinationDir --enableGitInfo --minify
+	hugo --gc --cleanDestinationDir --enableGitInfo --minify
 
 .PHONY: upload
 upload: build
