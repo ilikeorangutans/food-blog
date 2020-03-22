@@ -3,13 +3,14 @@
   {{- partial "head.html" . -}}
   <body>
     {{- partial "main_nav.html" . -}}
-    <section class="container" id="content">
+    <main class="container" id="content">
       <div class="box">
         {{- block "main" . }}{{- end }}
       </div>
-    </section>
-
+    </main>
 
     {{- partial "footer.html" . -}}
   </body>
+  <script async type="text/javascript" src="{{ .Site.BaseURL }}js/blog.js"></script>
+
 </html>

@@ -5,5 +5,13 @@
       &bull;
       built with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="http://bulma.io/" target="_blank">Bulma</a>
     </p>
+    <p>
+    {{ $site := .Site }}
+    {{ with $site.Home.OutputFormats.Get "rss" -}}
+    <a class="icon" href="{{ .Permalink }}" title="RSS 2.0"><i class="fa fa-rss"></i></a>
+    {{ end -}}
+    <a class="icon" href="https://github.com/ilikeorangutans/food-blog" title="Sources for this blog"><i class="fa fa-github"></i></a>
+    <a class="icon" href="mailto:jakob.kuelzer@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+    </p>
   </div>
 </footer>

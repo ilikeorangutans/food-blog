@@ -9,7 +9,7 @@
     <div class="level-left">
       <div class="level-item">
         <p>
-        <i class="icon fa fa-calendar"></i><em>{{ .Lastmod.Format "January 2, 2006" }}</em>
+        <i class="icon fa fa-calendar"></i><abbr title="Posted on {{ .Date.Format "January 2, 2006" }}, last updated on {{ .Lastmod.Format "January 2, 2006" }}">{{ .Lastmod.Format "January 2, 2006" }}</abbr>
         </p>
       </div>
     </div>

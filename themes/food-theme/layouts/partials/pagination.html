@@ -1,14 +1,34 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
 <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-  <a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="pagination-previous" aria-label="Previous">Previous</a>
-  <a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="pagination-next" aria-label="Next">Next</a>
+  {{ if $pag.HasPrev }}<a href="{{ $pag.Prev.URL }}" class="pagination-previous" aria-label="Previous">Previous</a>{{ end }}
+  {{ if $pag.HasNext }}<a href="{{ $pag.Next.URL }}" class="pagination-next" aria-label="Next">Next</a>{{ end }}
 
   <ul class="pagination-list">
+
+    {{ $ellipsed := false }}
+    {{ $shouldEllipse := false }}
     {{ range $pag.Pagers }}
+    {{ $right := sub .TotalPages .PageNumber }}
+    {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
+    {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2)))  }}
+    {{ if $showNumber }}
+      {{ $ellipsed = false }}
+      {{ $shouldEllipse = false }}
+    {{ else }}
+      {{ $shouldEllipse = not $ellipsed }}
+      {{ $ellipsed = true }}
+    {{ end }}
+    {{ if $showNumber }}
     <li>
-      <a href="{{.URL}}" class="pagination-link">{{ .PageNumber }}</a>
+      <a href="{{.URL}}" class="pagination-link{{ if eq . $pag }} is-current{{ end }}">{{ .PageNumber }}</a>
     </li>
+    {{ else if $shouldEllipse }}
+
+    <li>
+      <span class="pagination-ellipsis">&hellip;</span>
+    </li>
+    {{ end }}
     {{ end }}
   </ul>
 </nav>

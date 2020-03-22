@@ -1,16 +1,15 @@
 {{ define "main" }}
-  <p class="subtle-header">{{ .Title }}</p>
-  <p>
-    {{ .Content }}
-  </p>
+<p class="subtle-header">{{ .Title }}</p>
+<p>
+{{ .Content }}
+</p>
 
-  {{ $paginator := .Paginator }}
-  {{ partial "pagination.html" . }}
-  <div class="content">
+{{ $paginator := .Paginator }}
+{{ partial "pagination.html" . }}
+<div class="content">
   {{ range $paginator.Pages.ByLastmod.Reverse}}
   {{ partial "list-item.html" . }}
   {{ end }}
-  </div>
-  {{ partial "pagination.html" . }}
-
+</div>
+{{ partial "pagination.html" . }}
 {{ end }}
