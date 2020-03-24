@@ -17,4 +17,4 @@ build:
 
 .PHONY: upload
 upload: build
-	gsutil -m rsync -c -r -d public gs://food.hannah-and-jakob.ca/
+	gsutil -m rsync -c -r -x '.DS_Store' -d public gs://food.hannah-and-jakob.ca/

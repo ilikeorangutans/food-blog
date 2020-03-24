@@ -13,7 +13,9 @@
   {{ $largeImage := .Resize "1280x" }}
     <div class="column is-half">
       <figure class="image">
-        <img alt="{{ $image.Title }}" src="{{ $image.RelPermalink }}">
+        <a href="{{ $largeImage.RelPermalink }}">
+          <img alt="{{ $image.Title }}" src="{{ $image.RelPermalink }}">
+        </a>
       </figure>
     </div>
   {{ end }}
