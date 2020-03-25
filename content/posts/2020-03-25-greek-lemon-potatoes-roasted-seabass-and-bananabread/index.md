@@ -1,7 +1,6 @@
 ---
 title: "Greek Lemon Potatoes, Roasted Seabass, and Bananabread"
 date: 2020-03-25T11:54:50-04:00
-draft: true
 tags:
 - potato
 - greek
