@@ -28,11 +28,21 @@
     <div class="columns is-multiline">
       {{ $current := . }}
       {{ range first 2 (.Resources.ByType "image") }}
-      {{ $image := .Fill "500x375 center" }}
+
+      {{ $thumb640 := .Fill "640x480 center" }}
+      {{ $thumb544 := .Fill "544x408 center" }}
+      {{ $thumb353 := .Fill "353x264 center" }}
+
       <div class="column is-half">
         <figure class="image is-4by3">
           <a href="{{ $current.RelPermalink }}">
-            <img alt="{{ $current.Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}" src="{{ $image.RelPermalink }}">
+            <img alt="{{ $current.Title }}"
+                 src="{{ $thumb640.RelPermalink }}"
+                 srcset="
+                         {{ $thumb640.RelPermalink }} 640w,
+                         {{ $thumb544.RelPermalink }} 544w,
+                         {{ $thumb353.RelPermalink }} 353w"
+                 sizes="(min-width: 769px) 50vw, 100vw" >
           </a>
         </figure>
       </div>

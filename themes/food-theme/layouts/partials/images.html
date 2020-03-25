@@ -1,0 +1,22 @@
+  <div class="columns is-multiline">
+    {{ range . }}
+    {{ $thumb640 := .Fill "640x480 center" }}
+    {{ $thumb544 := .Fill "544x408 center" }}
+    {{ $thumb353 := .Fill "353x264 center" }}
+    {{ $largeImage := .Resize "1280x" }}
+    <div class="column is-half">
+      <figure class="image">
+        <a href="{{ $largeImage.RelPermalink }}">
+          <img alt="{{ $thumb640.Title }}"
+               src="{{ $thumb640.RelPermalink }}"
+               srcset="
+                       {{ $thumb640.RelPermalink }} 640w,
+                       {{ $thumb544.RelPermalink }} 544w,
+                       {{ $thumb353.RelPermalink }} 353w"
+               sizes="(min-width: 769px) 50vw, 100vw"
+               >
+        </a>
+      </figure>
+    </div>
+    {{ end }}
+  </div>

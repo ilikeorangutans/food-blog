@@ -26,19 +26,7 @@
   </div>
 
   {{ with .Resources.ByType "image" }}
-  <div class="columns is-multiline">
-    {{ range . }}
-    {{ $image := .Fill "500x375" }}
-    {{ $largeImage := .Resize "1280x" }}
-    <div class="column is-half">
-      <figure class="image">
-        <a href="{{ $largeImage.RelPermalink }}">
-          <img alt="{{ $image.Title }}" src="{{ $image.RelPermalink }}">
-        </a>
-      </figure>
-    </div>
-    {{ end }}
-  </div>
+  {{- partial "images.html" . -}}
   {{ end }}
 
   <div class="content">

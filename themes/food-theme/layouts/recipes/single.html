@@ -21,23 +21,10 @@
   </div>
 </div>
 
+
 {{ with .Resources.ByType "image" }}
 <h2 class="subtle-header subtitle">Photos</h2>
-<div class="container">
-  <div class="columns is-multiline">
-    {{ range . }}
-    {{ $image := .Fill "500x375 center" }}
-    {{ $largeImage := .Resize "1280x" }}
-    <div class="column is-half">
-      <figure class="image is-4by3">
-	<a href="{{ $largeImage.RelPermalink }}">
-	  <img alt="{{ .Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}" src="{{ $image.RelPermalink }}">
-	</a>
-      </figure>
-    </div>
-    {{ end }}
-  </div>
-</div>
+{{- partial "images.html" . -}}
 {{ end }}
 
 <h2 class="subtle-header subtitle">Overview</h2>
