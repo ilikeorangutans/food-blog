@@ -1,16 +1,35 @@
 {{ define "main" }}
-<article class="content">
-  <h1 class="title">
-    {{ .Title }}
-  </h1>
-  <p>
-  <span class="icon"><i class="fa fa-calendar"></i></span><abbr title="Posted on {{ .Date.Format "January 2, 2006" }}, last updated on {{ .Lastmod.Format "January 2, 2006" }}">{{ .Lastmod.Format "January 2, 2006" }}</abbr>
-  </p>
+<article>
+  <header>
+    <h1 class="subtitle is-size-3">
+        {{ .LinkTitle }}
+    </h1>
+  </header>
+
+  <div class="level">
+    <div class="level-left">
+      <div class="level-item">
+        <p>
+        <i class="icon fa fa-calendar"></i><abbr title="Posted on {{ .Date.Format "January 2, 2006" }}, last updated on {{ .Lastmod.Format "January 2, 2006" }}">{{ .Lastmod.Format "January 2, 2006" }}</abbr>
+        </p>
+      </div>
+    </div>
+    <div class="level-right">
+      <div class="level-item tags">
+        <i class="icon fa fa-tags"></I>
+        {{ if .Draft }}<span class="tag is-rounded is-danger">Draft</span>{{ end }}
+        <span class="tag is-rounded is-primary">{{ .Type | singularize | title }}</span>
+        {{- if .Params.tags }}{{ range $tag := .Params.tags }}<a class="tag" href="/tags/{{ $tag | urlize }}">{{ $tag | title }}</a>{{ end -}}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
   {{ with .Resources.ByType "image" }}
   <div class="columns is-multiline">
-  {{ range . }}
-  {{ $image := .Resize "500x375" }}
-  {{ $largeImage := .Resize "1280x" }}
+    {{ range . }}
+    {{ $image := .Fill "500x375" }}
+    {{ $largeImage := .Resize "1280x" }}
     <div class="column is-half">
       <figure class="image">
         <a href="{{ $largeImage.RelPermalink }}">
@@ -18,12 +37,12 @@
         </a>
       </figure>
     </div>
-  {{ end }}
+    {{ end }}
   </div>
   {{ end }}
 
-  <p>
-  {{ .Content }}
-  </p>
+  <div class="content">
+    {{ .Content }}
+  </div>
 </article>
 {{ end }}
