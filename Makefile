@@ -14,6 +14,7 @@ post:
 .PHONY: build
 build:
 	hugo --gc --cleanDestinationDir --enableGitInfo --minify
+	find public -name '*.jpg' | grep -v 'lanczos' | xargs rm
 
 .PHONY: upload
 upload: build
