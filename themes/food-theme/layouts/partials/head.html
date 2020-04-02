@@ -1,6 +1,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="{{ .Site.Author.name | safeHTML }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:type" content="blog">
+    {{- range first 2 (.Resources.ByType "image") -}}
+    {{- $thumb640 := .Fill "640x480 center" }}
+    <meta property="og:image" content="{{ $thumb640.RelPermalink}}">
+    {{- end }}
 
     <title>{{ .Title }} &ndash; {{ .Site.Title }}</title>
     {{ range .Site.Home.AlternativeOutputFormats -}}
