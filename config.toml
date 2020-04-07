@@ -5,6 +5,7 @@ theme = "food-theme"
 defaultContentLanguage = "en"
 copyright = "&copy; 2020"
 enableGitInfo = true
+disqusShortName = "jakobs-food-blog"
 
 [author]
 
