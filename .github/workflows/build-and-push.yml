@@ -30,6 +30,9 @@ jobs:
     - name: list stuff
       run: file /home/runner/work/food-blog/food-blog/content/posts/2018-01-10-espresso/IMG_20180110_101131.jpg
       
+    - name: lfs pull
+      run: git-lfs pull
+      
     - name: hugo build
       run: PATH=./bin:$PATH make build
       
