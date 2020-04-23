@@ -23,7 +23,10 @@ jobs:
     - name: Hugo Actions
       uses: srt32/hugo-action@v0.0.3      
 
-
+    - name: hugo build
+      run: hugo --gc --cleanDestinationDir --enableGitInfo --minify
+      
+      
     # Runs a single command using the runners shell
     - name: Run a one-line script
       run: ls -l $GITHUB_WORKSPACE
