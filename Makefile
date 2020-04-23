@@ -5,7 +5,7 @@ safe_title := $(shell echo $(title) | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a
 
 .PHONY: server
 server:
-	hugo server --disableFastRender -w -D --enableGitInfo
+	hugo server --disableFastRender -w -D
 
 .PHONY: post
 post:
@@ -13,7 +13,7 @@ post:
 
 .PHONY: build
 build:
-	hugo --gc --cleanDestinationDir --enableGitInfo --minify
+	hugo --gc --cleanDestinationDir --minify
 	find public -name '*.jpg' | grep -v 'lanczos' | xargs rm
 
 .PHONY: upload
