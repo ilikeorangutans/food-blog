@@ -17,7 +17,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-
+    - name: Setup gcloud environment
+      uses: GoogleCloudPlatform/github-actions@0.1.2
+      with:
+        service_account_email: ${{ secrets.gcp_sa_email }}
+        service_account_key: ${{ secrets.gcp_sa_key }}
+        project_id: ${{ secrets.gcp_project_id }}
+      
     - name: enable lfs
       run: git lfs install
       
@@ -33,16 +39,6 @@ jobs:
     - name: lfs pull
       run: git-lfs pull
       
-    - name: hugo build
+    - name: hugo upload
       run: PATH=./bin:$PATH make build
       
-      
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: ls -l $GITHUB_WORKSPACE
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
