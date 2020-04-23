@@ -20,11 +20,11 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Hugo Actions
+    - name: install hugo
       run: mkdir bin && cd bin && curl -L https://github.com/gohugoio/hugo/releases/download/v0.69.1/hugo_0.69.1_Linux-64bit.tar.gz | tar xzv
 
-    - name: list hugo
-      run: ls -l .
+    - name: enable lfs
+      run: git lfs install
       
     - name: hugo build
       run: PATH=./bin:$PATH make build
