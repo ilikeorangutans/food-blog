@@ -26,6 +26,9 @@ jobs:
     - name: enable lfs
       run: git lfs install
       
+    - name: list stuff
+      run: find ./
+      
     - name: hugo build
       run: PATH=./bin:$PATH make build
       
