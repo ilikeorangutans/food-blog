@@ -6,7 +6,7 @@
 
 <p class="subtle-header">Recent Posts</p>
 
-{{ range first 5 (.Site.RegularPages.ByDate ).Reverse }}
+{{ range first 5 (.Site.RegularPages.ByLastmod ).Reverse }}
 {{ partial "list-item.html" . }}
 {{ end }}
 
