@@ -28,7 +28,7 @@ jobs:
       run: mkdir bin && cd bin && curl -L https://github.com/gohugoio/hugo/releases/download/v0.69.1/hugo_0.69.1_Linux-64bit.tar.gz | tar xzv
 
     - name: list stuff
-      run: find ./
+      run: file /home/runner/work/food-blog/food-blog/content/posts/2018-01-10-espresso/IMG_20180110_101131.jpg
       
     - name: hugo build
       run: PATH=./bin:$PATH make build
