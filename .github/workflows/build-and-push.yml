@@ -17,15 +17,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
+    - name: enable lfs
+      run: git lfs install
+      
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
     - name: install hugo
       run: mkdir bin && cd bin && curl -L https://github.com/gohugoio/hugo/releases/download/v0.69.1/hugo_0.69.1_Linux-64bit.tar.gz | tar xzv
 
-    - name: enable lfs
-      run: git lfs install
-      
     - name: list stuff
       run: find ./
       
