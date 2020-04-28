@@ -6,10 +6,8 @@
 
 {{ $paginator := .Paginator }}
 {{ partial "pagination.html" . }}
-<div class="content">
-  {{ range $paginator.Pages.ByLastmod.Reverse}}
-  {{ partial "list-item.html" . }}
-  {{ end }}
-</div>
+{{ range $paginator.Pages.ByLastmod.Reverse}}
+{{ partial "list-item.html" . }}
+{{ end }}
 {{ partial "pagination.html" . }}
 {{ end }}
