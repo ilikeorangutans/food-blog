@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Food I Made (or ate)"
 theme = "food-theme"
 defaultContentLanguage = "en"
-copyright = "&copy; 2020"
+copyright = "&copy; 2024"
 disqusShortName = "jakobs-food-blog"
 enableGitInfo = true
 
