@@ -14,7 +14,7 @@ post:
 .PHONY: build
 build:
 	hugo --gc --cleanDestinationDir --minify
-	find public -name '*.jpg' | grep -v 'lanczos' | xargs rm
+	find public -name '*.jpg' | grep -v '_hu_' | xargs rm
 
 .PHONY: upload
 upload: build

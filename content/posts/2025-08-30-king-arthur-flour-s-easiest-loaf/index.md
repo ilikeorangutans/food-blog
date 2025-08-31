@@ -1,7 +1,6 @@
 ---
 title: "King Arthur Flour's Easiest Loaf"
 date: 2025-08-30T21:27:36-04:00
-draft: true
 tags: 
 - bread
 ---
