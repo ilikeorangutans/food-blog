@@ -1,7 +1,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="{{ .Site.Author.name | safeHTML }}">
+    <meta name="author" content="{{ .Site.Params.Author.name | safeHTML }}">
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:type" content="blog">
     {{- range first 2 (.Resources.ByType "image") -}}

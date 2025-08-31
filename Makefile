@@ -1,6 +1,6 @@
 today := $(shell date +%Y-%m-%d)
 title ?= "New Blog Post"
-safe_title := $(shell echo $(title) | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g' | sed -E 's/^-+|-+$$//g' )
+safe_title := $(shell echo "$(title)" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g' | sed -E 's/^-+|-+$$//g' )
 
 
 .PHONY: server
